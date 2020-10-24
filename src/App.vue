@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header v-bind:isAdmin="isAdmin" v-bind:userName="userName"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/Header";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header
+  },
+  data() {
+    return {
+      isAdmin: true,
+      userName: "UserName"
+    }
   }
 }
 </script>
@@ -21,8 +27,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  background-color: #343434;
+  height: 100vh;
 }
 </style>
