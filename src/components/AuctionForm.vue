@@ -1,5 +1,5 @@
 <template>
-  <form id="auctionForm" class="searchForm" @submit.prevent="onSubmit">
+  <form id="auctionForm" class="searchForm" @submit.prevent="$emit('search', $data)">
     <input @click="auction = 'copart'"
            class="hiddenRadio"
            id="auction1"
@@ -34,7 +34,9 @@
       Вводити номер з URL аукціону
     </p>
 
-    <input type="text"
+    <input
+        v-model="lotId"
+        type="text"
            placeholder="Номер лоту.."
            name="lot">
 
@@ -50,7 +52,8 @@ export default {
   name: "AuctionForm",
   data() {
     return {
-      auction: "copart"
+      auction: "copart",
+      lotId: ""
     }
   },
   methods: {

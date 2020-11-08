@@ -2,15 +2,15 @@
   <div id="photos">
     <div class="imgContainer" v-for="image in images" v-bind:key="image.id">
       <div class="checkBoxContainer">
-        <input class="mgr mgr-success mgr-lg"
-               type="radio"
+        <input type="radio"
                name="mainPhoto"
                v-bind:value="image.id"
                v-bind:id="'carImg' + image.id"
+               v-model="mainPhoto"
                :checked="image.id == 1">
-        <input class="mgc-switch mgc-sm"
-               type="checkbox"
+        <input type="checkbox"
                name="enabledPhoto"
+               v-model="selectedPhotos"
                v-bind:value="image.id" checked>
       </div>
       <label v-bind:for="'carImg' + image.id">
@@ -23,7 +23,18 @@
 <script>
 export default {
   name: "LotImages",
-  props: ['images']
+  props: ['images'],
+  data() {
+    return {
+      mainPhoto: 1,
+      selectedPhotos: [1, 2, 3, 4, 5]
+    }
+  },
+  methods: {
+    getImages() {
+      return this.$data;
+    }
+  }
 }
 </script>
 
