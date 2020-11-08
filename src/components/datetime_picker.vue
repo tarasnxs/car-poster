@@ -56,7 +56,7 @@
         <button type='button' v-on:click='clearDate' class='okButton'>Clear</button>
         <button type='button' v-on:click='setDate' class='okButton ok'>OK</button>
       </div>
-      <input type='text' :readonly="readonly" id='tj-datetime-input' :required="required" :value="date"  :name='name' v-on:click='toggleCal' autocomplete='off'  />
+      <input type='text' placeholder="Час публікації" :readonly="readonly" id='tj-datetime-input' :required="required" :value="date"  :name='name' v-on:click='toggleCal' autocomplete='off'  />
     </div>
   </div>
 

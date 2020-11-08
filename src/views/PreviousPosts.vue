@@ -1,5 +1,8 @@
 <template>
   <div>
+    <br>
+    <br>
+    <h2 style="padding: 10px">Останні публікації</h2>
     <vue-confirm-dialog></vue-confirm-dialog>
     <Loader v-if="loading"></Loader>
     <table v-else >
@@ -44,7 +47,9 @@
             {{post.isPosted ? 'Опубліковано' : 'Заплановано'}}
           </td>
           <td>
-            <button v-if="!post.isPosted" @click="deleteSavedPost(post.id)" class="removeButton">X</button>
+            <button v-if="!post.isPosted" @click="deleteSavedPost(post.id)" class="removeButton">
+              <i class="fa fa-remove"></i>
+            </button>
           </td>
         </tr>
       </tbody>
@@ -136,6 +141,22 @@ export default {
 </script>
 
 <style scoped>
+  tr {
+    text-align: center;
+    border: none;
+  }
+
+  td {
+    border: none;
+  }
+
+  tr:nth-child(even) {
+    background-color: #5D5D5D;
+  }
+  tr:nth-child(odd) {
+    background-color: #4D4D4D;
+  }
+
   .carName a:hover {
     color: #aaf;
   }
@@ -155,13 +176,18 @@ export default {
     color: white;
     border: none;
     border-radius: 50%;
-    font-weight: bold;
     cursor: pointer;
+    font-size: 17px;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
   }
 
   .description {
-    font-size: 1px;
+    font-size: 16px;
     width: 40%;
+    text-align: left;
+    padding: 10px;
   }
 
   .selectedPage {
@@ -170,15 +196,16 @@ export default {
   }
 
   .carImage {
-    width: 120px;
+    width: 220px;
   }
 
   .canalImage {
-    width: 32px;
+    width: 50px;
   }
 
   button.page-link {
     display: inline-block;
+    cursor: pointer;
   }
   button.page-link {
     font-size: 20px;

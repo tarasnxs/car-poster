@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
   #header {
-    font-size: 0.1em;
+    font-size: 1.1em;
     font-weight: 500;
     width: 100%;
     height: 35px;

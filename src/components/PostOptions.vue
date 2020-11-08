@@ -79,7 +79,13 @@
       <input type="checkbox" v-model="onTimePost" id="planningPost">
       <br>
       <br>
-      <datetime v-if="onTimePost" format="YYYY-MM-DD H:i" v-model="postTime" first-day-of-week="1" id="postTime"></datetime>
+      <datetime
+          v-if="onTimePost"
+          format="YYYY-MM-DD H:i"
+          v-model="postTime"
+          first-day-of-week="1"
+          id="postTime"
+          ></datetime>
       <br>
       <br>
       <a  v-bind:class="{savedButton : saved}"
