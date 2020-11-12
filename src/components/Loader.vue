@@ -21,7 +21,6 @@ name: "Loader"
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  margin: 0px;
   box-sizing: border-box;
   border: 10px solid #cef;
   border-color: #cef transparent #cef transparent;
